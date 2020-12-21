@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>All Books</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        
+
+        <style type=text/css >
+            body{
+                background-color: silver;
+            }
+            .navbar{
+                    box-shadow: 5px 4px 6px rgba(0,0,0,0.1);
+            }
+            .head{
+                    font-family: 'Merriweather', serif;
+                    font-size: 35px;
+            }
+            .main1{
+                    align-self: center;
+                    align-items: center;
+                    background-color: none;
+                    margin: 0 auto;
+                    text-align: center;
+                    font-family: 'Merriweather', serif;
+                }
+            .main2{
+                    align-self: center;
+                    align-items: center;
+                    background-color: none;
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                    font-family: 'Merriweather', serif;
+                }
+            /* .btn:hover{
+                    transform: translate(0, -5px);
+                    background-color: rgb(7, 119, 67);
+                    color: wheat;
+                } */
+            /* .mainbtn:hover{
+                    transform: translate(0, -10px);
+                    background-color: #00808C;
+                    color: white;
+                } */
+            .card{
+                    margin-top: 40px;
+                    transition: transform .3s ease-out;
+                    display: inline-block;
+                    border: 0px;
+                    text-align: left;
+                    font-family: 'Merriweather', serif;
+                }
+            .card:hover{
+                    transform: translate(-5px, -10px);
+                    box-shadow: 18px 18px 18px rgba(5, 5, 5, 0.4);
+                }
+            .btn:hover{
+                transform: translate(-2px, -3px);
+                box-shadow: 8px 8px 8px rgba(5, 5, 5, 0.4);
+            }
+            .content{
+                    width:85%;
+                    height: 10%;
+                    text-align: left;
+                    padding-top: 25px;
+                    margin-top: 25px;
+                    background-color: none;
+                }
+            .footer{
+                    width: 100%;
+                    height: 30%;
+                    text-align: center;
+                    color: rgba(0,0,0,0.6);
+                    font-size: 18px;
+                    padding: 16px;
+                }
+                .embed-responsive .card-img-top {
+                    width: 70%;
+                    height: 40vh;
+                }  
+            @media screen and (max-width: 720px) {
+            .navbar{
+                    margin:0 auto;
+                }
+            .main1{
+                    margin:0 auto;
+                }
+            .content{
+                    padding: 0 auto;
+                }
+            .container{
+                    margin: 0 auto;
+                }
+            }
+            .custom-select {
+                position: relative;
+                font-family: Arial;
+            }
+
+        </style>
+    </head>
+    <body>
+    
+        <!-- NAVBAR -->
+        <nav  class="navbar navbar-light bg-light">
+                <span class="navbar-brand mb-0 h1">Admin <b>BOOKS</b></span>
+                
+                <form action="/admin/viewBooks" method="POST">
+                    
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <select class="mdb-select md-form custom-select" name="category">
+                                    <option value="" disabled selected>Choose your category</option>
+                                    <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
+                                    <option value="ELECTRONICS & COMMUNICATION">ELECTRONICS & COMMUNICATION</option>
+                                    <option value="INFORMATION TECHNOLOGY">INFORMATION TECHNOLOGY</option>
+                                    <option value="MATHEMATICS">MATHEMATICS</option>
+                                    <option value="NOVEL">NOVEL</option>
+                                    <option value="MAGAZINES" > MAGAZINES </option>
+                            </select>    
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" class="form-control mb-2" id="inlineFormInput" name="bookName" placeholder="Search By Bookname">
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" id="inlineFormInputGroup" name="autherName" placeholder="Search By Authername">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-success mb-2">Search</button>
+                        </div>
+                    </div>
+                </form>
+
+
+        </nav>
+
+
+        <div class="main1">
+            <div class="container-fluid main2">
+                <div class="row">
+                    <!-- <% for(var i = 0; i < allFilteredBooks.length; i++) {  %> -->
+                        <div class="col-xs-12 col-sm-6  col-md-4 col-lg-6" style="display: flex;flex-direction: row;">
+                                <div class="card" style="width: 100%;">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <img class="card-img-top embed-responsive-item"  alt="BOOK image" src= "https://lh3.googleusercontent.com/26y4Qgd4lojyeApjjlH0bBM9i7zFxmytMHq_griMqp1tpht6wtc1qBt3gD26bmSsoFi3_cL4GRV5bznnOexkIWHNvrsdJXMOrHvKgeyxn2x_CVX2btzPb5CzyiCP4gzwfQ=s412" >
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"> <b>Book Id</b> : 1</li>   
+                                    <li class="list-group-item"> <b>Book Name</b> : CONTROL SYSTEM ENGINEERING</li>
+                                    <li class="list-group-item"> <b>Auther Name</b> : I.J.Nagrath, M.Gopal</li>
+                                    <li class="list-group-item"> <b>Category</b>ELECTRONICS And COMMUNICATION</li>
+                                    <li class="list-group-item"> <b>Book Edition</b> : 5th</li>
+                                    <li class="list-group-item"> <b>Current Available</b> :Yes </li>
+                                    <li class="list-group-item"> <b>Room Number</b> 3</li>
+                                    <li class="list-group-item"> <b>Shelf Number</b> 5 </li>
+                                    <ul>
+                                </div>
+                                <div class="card" style="width: 100%;margin-left:30px ;">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <img class="card-img-top embed-responsive-item"  alt="BOOK image" image" src= "https://images-na.ssl-images-amazon.com/images/I/71VqTPgU9RL.jpg" >
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"> <b>Book Id</b> : 2</li>   
+                                    <li class="list-group-item"> <b>Book Name</b> : DIGITAL INTEGRATED ELECTRONICS</li>
+                                    <li class="list-group-item"> <b>Auther Name</b> : Herbet Taub ,  Donald Schilling</li>
+                                    <li class="list-group-item"> <b>Category</b>: ELECTRONICS And COMMUNICATION</li>
+                                    <li class="list-group-item"> <b>Book Edition</b>: 3rd</li>
+                                    <li class="list-group-item"> <b>Current Available</b>: Yes</li>
+                                    <li class="list-group-item"> <b>Room Number</b>: 3</li>
+                                    <li class="list-group-item"> <b>Shelf Number</b>: 3</li>
+                                    <ul>
+                                </div>
+                        </div>
+                    <!-- <% }
+                    %> -->
+                    <!-- <%= allFilteredBooks[i].bookImage %>
+                        : <%= allFilteredBooks[i].bookId %> 
+                        : <%= allFilteredBooks[i].bookName.toUpperCase() %>
+                        : <%= allFilteredBooks[i].autherName.toUpperCase() %>
+                        : <%= allFilteredBooks[i].category.toUpperCase() %>
+                        : <%= allFilteredBooks[i].edition %>
+                        : <%= allFilteredBooks[i].currentAvailable.toUpperCase() %>
+                        : <%= allFilteredBooks[i].roomNumber %>
+                        : <%= allFilteredBooks[i].shelfNumber %>
+                    -->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
