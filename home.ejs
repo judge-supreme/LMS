@@ -10,50 +10,59 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style> #fort {
-    width: 70%; margin-left: 5%; margin-top: 8%;
-  }
+    <style> 
+    #fort{
+        text-align: center;
+        margin-top: 20px;
+    }
+    .form-group{
+      width: 50%;
+      margin-left:25%;
+      margin-top: 20px;
+    }
+    #three{
+      float: right;
+      margin-right: 10px;
+    }
 
-@media screen and (min-width: 480px) {
-  #fort {
-    width: 25%; margin-left: 65%; margin-top: 8%;
-  }
-}</style>
+</style>
 </head>
-<body style="background-image: url(https://culturenl.co.uk/wp-content/uploads/2014/04/DSC_9842.jpg); background-repeat: no-repeat; background-size: cover;">
-  <nav style="background-color: #a84832">
-    <img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Iiit-una-logo.png" style="width:6%; height:15vh; float: left; margin-left: 8%">
-    <h1 style="margin-left:20%;font-family: serif;font-size:200%;color: white;">Indian Institute of Information Technology, Una</h1>
-    <h4 style="margin-left: 25%; font-size: 100% ;color: white">(An institute of national importance)</small>
-      <br>
-      <br>
+<body style="background-image: url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxzZWFyY2h8MXx8bGlicmFyeXx8MHx8fA&ixlib=rb-1.2.1&q=80&w=1080); background-repeat: no-repeat; background-size: cover;">
+  <nav style="background-color:#96897f; height:25vh;">
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Iiit-una-logo.png" style="width:10%; height:20vh; float: left;object-fit:contain;margin-left: 10px;margin-top:10px;">
+
+    <h1 style="margin-left:1%; padding: 25px; font-family: serif;font-size:280%;color: black;">Indian Institute of Information Technology, Una</h1>
+    <form action="/login" method="POST" class="form-inline" id ="three">
+      <input name="username" placeholder = "UserId" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+      <input name="password" placeholder = "Password" type="password" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+      <button class="btn btn-success btn-dark text-white my-2 my-sm-0" type="submit">Sign in</button>
+    </form>
   </nav>
-  <nav class="navbar navbar-light" style="background-color:silver">
-        <!-- <span class="navbar-brand" href="/admin" style ="margin-left: 5%;font-style: bold;font-size: 200%;font-family: serif;">Welcome to Online Library</span> -->
-        <a class="navbar-brand btn btn-dark btn-lg text-white" href="/admin">Admin Page</a>
-        <br>
-        <br>
-        <br>
-        <form action="/login" method="POST" class="form-inline" id ="three">
-            <input name="username" placeholder = "UserId" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
-            <input name="password" placeholder = "Password" type="password" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
-            <button class="btn btn-success text-white my-2 my-sm-0" type="submit">Sign in</button>
-        </form>
-    </nav>
+
+    <div class="container" style="background-color:#e6d5b8; width:40%; height:50vh;border:solid;margin-top: 50px;">
         <form  action="/signup" method="POST" id = "fort">
-            <label style = "font-style: bold; font-size: 130%;font-family: serif;background-color: yellow;">New here? Create a free account!!</label>
-            <div class="form-group">
-                <input name="username" placeholder = "UserId ( i.e. Roll Number )" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-            </div>
-            <div class="form-group">
-                <input name="studentName" placeholder = "Name" type="text" class="form-control" id="exampleInputPassword1" required>
-            </div>
-            <div class="form-group">
-                <input name="password" placeholder = "Password" type="password" class="form-control" id="exampleInputPassword1" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign up</button>
+            <label style="font-style: bold; font-size: 130%;font-family: serif;background-color:#96897f; text-align:centre;">New here? Create a free account!!</label>
+          <div class="form-group">
+             <input name="username" placeholder="UserId ( i.e. Roll Number )" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          </div>
+          <div class="form-group">
+              <input name="studentName" placeholder="Name" type="text" class="form-control" id="exampleInputPassword1" required>
+          </div>
+          <div class="form-group">
+              <input name="password" placeholder="Password" type="password" class="form-control" id="exampleInputPassword1" required>
+          </div>
+            <button type="submit" class="btn btn-dark text-white" style="margin-top:10px;">Sign up</button>
         </form>
+    </div>
 
-
+<nav class="navbar navbar-light" style="background-color:#7e6f65; margin-top: 100px;">
+      <!-- <span class="navbar-brand" href="/admin" style ="margin-left: 5%;font-style: bold;font-size: 200%;font-family: serif;">Welcome to Online Library</span> -->
+<a class="navbar-brand btn btn-dark btn-lg text-white" href="/admin">Admin Page</a>
+      <br>
+      <br>
+      <br>
+  
+  </nav>
 </body>
 </html>
+<!--style="background-color:#f3eac2; width:40%; margin:100px 100px 100px 100px; padding:20px 20px 20px 20px; text-align:justify;"> -->
